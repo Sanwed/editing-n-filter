@@ -1,0 +1,6 @@
+export const FORM_VALUE_CHANGE = "FORM_VALUE_CHANGE";
+export const CLEAR_FORM = "CLEAR_FORM";
+export const TASK_CREATE = "TASK_CREATE";
+export const TASK_DELETE = "TASK_DELETE";
+export const TASK_UPDATE = "TASK_UPDATE";
+export const SWITCH_EDIT_MODE = "SWITCH_EDIT_MODE";
