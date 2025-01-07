@@ -1,4 +1,4 @@
-import {FORM_VALUE_CHANGE, CLEAR_FORM} from "../actions/actionTypes.ts";
+import {FORM_TASK_CHANGE, CLEAR_FORM} from "../actions/actionTypes.ts";
 import {ITaskForm} from "../interfaces/interfaces.ts";
 
 const initialState: ITaskForm = {
@@ -14,7 +14,7 @@ interface IAction {
 
 export default function taskFormReducer(state = initialState, action: IAction) {
   switch (action.type) {
-    case FORM_VALUE_CHANGE:
+    case FORM_TASK_CHANGE:
       return {...state, [action.payload.name]: action.payload.value};
     case CLEAR_FORM:
       return initialState;

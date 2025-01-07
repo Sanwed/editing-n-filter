@@ -5,7 +5,10 @@ import {deleteTask, setTaskForm, switchEditMode} from "../actions/actionCreators
 function TaskList() {
   const isEditMode = useSelector((state: IState) => state.switchMode.isEditMode);
   const tasks = useSelector((state: IState) => state.taskList);
+  const filterValue = useSelector((state: IState) => state.filterTasks)
   const dispatch = useDispatch();
+
+  const filteredTasks = tasks.filter((task) => task.title.toLowerCase().includes(filterValue.toLowerCase()));
 
   const onDelete = (id: string) => {
     dispatch(deleteTask(id));
@@ -21,7 +24,7 @@ function TaskList() {
 
   return (
     <div className="task-list">
-      {tasks && tasks.map((task) => (
+      {filteredTasks && filteredTasks.map((task) => (
         <div id={task.id} key={task.id} className="task">
           <span>{task.title}</span> <b>{task.price}</b>
           <button disabled={isEditMode} onClick={() => onDelete(task.id)}>Delete</button>

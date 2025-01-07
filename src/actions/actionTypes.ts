@@ -1,4 +1,5 @@
-export const FORM_VALUE_CHANGE = "FORM_VALUE_CHANGE";
+export const FORM_TASK_CHANGE = "FORM_TASK_CHANGE";
+export const FORM_FILTER_CHANGE = "FORM_FILTER_CHANGE";
 export const CLEAR_FORM = "CLEAR_FORM";
 export const TASK_CREATE = "TASK_CREATE";
 export const TASK_DELETE = "TASK_DELETE";

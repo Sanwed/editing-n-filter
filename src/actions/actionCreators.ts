@@ -1,8 +1,20 @@
 import {ITaskForm} from "../interfaces/interfaces.ts";
-import {TASK_CREATE, FORM_VALUE_CHANGE, CLEAR_FORM, TASK_DELETE, SWITCH_EDIT_MODE, TASK_UPDATE} from "./actionTypes.ts";
+import {
+  TASK_CREATE,
+  FORM_TASK_CHANGE,
+  CLEAR_FORM,
+  TASK_DELETE,
+  SWITCH_EDIT_MODE,
+  TASK_UPDATE,
+  FORM_FILTER_CHANGE
+} from "./actionTypes.ts";
 
 export function setTaskForm(name: keyof ITaskForm, value: string) {
-  return {type: FORM_VALUE_CHANGE, payload: {name, value}};
+  return {type: FORM_TASK_CHANGE, payload: {name, value}};
+}
+
+export function setFilterForm(value: string) {
+  return {type: FORM_FILTER_CHANGE, payload: value};
 }
 
 export function clearForm() {

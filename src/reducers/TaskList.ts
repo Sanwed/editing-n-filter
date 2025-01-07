@@ -12,7 +12,7 @@ export default function taskListReducer(state = initialState, action: IAction) {
   switch (action.type) {
     case TASK_CREATE:
       return [...state, action.payload];
-    case TASK_DELETE:
+    case TASK_DELETE: {
       const index = action.payload as string;
       const deleteIndex = state.findIndex(task => task.id === index);
       if (deleteIndex !== -1) {
@@ -20,7 +20,8 @@ export default function taskListReducer(state = initialState, action: IAction) {
         return [...newState];
       }
       return state;
-    case TASK_UPDATE:
+    }
+    case TASK_UPDATE: {
       const task = action.payload as ITask;
       const id = task.id;
       const editIndex = state.findIndex(task => task.id === id);
@@ -32,6 +33,7 @@ export default function taskListReducer(state = initialState, action: IAction) {
         ];
       }
       return state;
+    }
     default:
       return state;
   }

@@ -18,4 +18,5 @@ export interface IState {
   taskForm: ITaskForm;
   taskList: ITask[];
   switchMode: IMode;
+  filterTasks: string;
 }
