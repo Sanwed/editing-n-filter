@@ -12,10 +12,10 @@ function FilterForm() {
   }
 
   return (
-    <>
+    <div className="filter-form">
       <h2>Поиск по названию</h2>
-      <input onChange={onChange} type="search" name="filterTasks" value={inputValue} />
-    </>
+      <input className="input" onChange={onChange} type="search" name="filterTasks" value={inputValue} />
+    </div>
   )
 }
 

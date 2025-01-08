@@ -36,9 +36,9 @@ function TaskForm() {
   return (
     <form onSubmit={isEditMode ? onEdit : onSubmit} className="task-form">
       <input type="hidden" name="taskId" value={items.taskId}/>
-      <input onChange={onChange} value={items.taskTitle} type="text" name="taskTitle" className="task-form__input"
+      <input onChange={onChange} value={items.taskTitle} type="text" name="taskTitle" className="input"
              placeholder="Название" required maxLength={20}/>
-      <input onChange={onChange} value={items.taskPrice} type="number" name="taskPrice" className="task-form__input"
+      <input onChange={onChange} value={items.taskPrice} type="number" name="taskPrice" className="input"
              placeholder="0" required max="10000000"/>
       <button type="submit" className="task-form__submit">{isEditMode ? 'Редактировать' : 'Добавить'}</button>
       <button onClick={onCancel} type="button" className={`task-form__cancel ${!isEditMode && 'hidden'}`}>Отмена

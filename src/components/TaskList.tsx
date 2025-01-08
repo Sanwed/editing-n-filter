@@ -26,9 +26,15 @@ function TaskList() {
     <div className="task-list">
       {filteredTasks && filteredTasks.map((task) => (
         <div id={task.id} key={task.id} className="task">
-          <span>{task.title}</span> <b>{task.price}</b>
-          <button disabled={isEditMode} onClick={() => onDelete(task.id)}>Delete</button>
-          <button disabled={isEditMode} onClick={() => onEdit(task.id, task.title, task.price)}>Edit</button>
+          <span>{task.title}</span>
+          <b>{task.price}</b>
+          <div className="task__buttons">
+            <button className="task__delete" disabled={isEditMode} onClick={() => onDelete(task.id)}>Delete</button>
+            <button className="task__edit" disabled={isEditMode}
+                    onClick={() => onEdit(task.id, task.title, task.price)}>
+              Edit
+            </button>
+          </div>
         </div>
       ))}
     </div>
